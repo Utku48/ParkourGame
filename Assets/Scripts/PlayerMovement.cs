@@ -32,13 +32,15 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             Jump();
+
         }
+
     }
     void Jump()
     {
         rb.velocity = new Vector3(rb.velocity.x, jumpForce, rb.velocity.z);
-   jumpSound.Play();
-   }
+        jumpSound.Play();
+    }
     void OnCollisionEnter(Collision collision)//Player EnemyHead ile temas ettiğinde Enemy Ölür.
     {
         if (collision.gameObject.CompareTag("Enemy Head"))
